@@ -25,8 +25,6 @@ const Button = styled.button`
   margin-right: 10px;
 `;
 
-const TRUFFLE_DEV_CHAIN_HOST = "http://localhost:9545/";
-
 // Only tested with metamask so far
 const useEth = (contractAddress: string) => {
   const [eth] = React.useState(() => {
