@@ -19,11 +19,11 @@ contract Migrations {
     last_completed_migration = completed;
   }
 
-  function set(uint x) public {
+  function setValue(uint x) public {
     storedData = x;
   }
 
-  function get() public view returns (uint) {
+  function getValue() public view returns (uint) {
     return storedData;
   }
 }

@@ -14,8 +14,8 @@ declare global {
 
   interface InitialContract extends Contract {
     methods: {
-      set: (x: number) => Pick<ContractSendMethod, "send">;
-      get: () => Pick<ContractSendMethod, "call">;
+      setValue: (x: number) => Pick<ContractSendMethod, "send">;
+      getValue: () => Pick<ContractSendMethod, "call">;
     };
   }
 }

@@ -61,27 +61,30 @@ export const Main = () => {
   // Currently you have to deploy the contract, get its address and hardcode items
   // as parameter when calling the useEth hook
   const { eth, accounts, contract } = useEth(
-    "0x03B4781112B2AB1C55238668AEC27d72E0d40C71"
+    "0x07585E99bBDB4C7f68CA276F8c124EF07686A37c"
   );
-  contract?.methods?.get()?.call();
   return (
     <Root>
       <Container>
         <Button
           onClick={() =>
-            contract?.methods.set(1).send({ from: accounts[0] || "NO_ACCOUNT" })
+            contract?.methods
+              .setValue(1)
+              .send({ from: accounts[0] || "NO_ACCOUNT" })
           }
         >
           Set 1
         </Button>
         <Button
           onClick={() =>
-            contract?.methods.set(2).send({ from: accounts[0] || "NO_ACCOUNT" })
+            contract?.methods
+              .setValue(2)
+              .send({ from: accounts[0] || "NO_ACCOUNT" })
           }
         >
           Set 2
         </Button>
-        <Button onClick={() => contract?.methods.get().call().then(alert)}>
+        <Button onClick={() => contract?.methods.getValue().call().then(alert)}>
           Get Value
         </Button>
       </Container>

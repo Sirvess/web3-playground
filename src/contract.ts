@@ -55,7 +55,7 @@ export const contractJsonInterface: AbiItem[] = [
         type: "uint256",
       },
     ],
-    name: "set",
+    name: "setValue",
     outputs: [],
     payable: false,
     stateMutability: "nonpayable",
@@ -64,7 +64,7 @@ export const contractJsonInterface: AbiItem[] = [
   {
     constant: true,
     inputs: [],
-    name: "get",
+    name: "getValue",
     outputs: [
       {
         internalType: "uint256",
