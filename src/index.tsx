@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Web3 from "web3";
 
 import { contractJsonInterface } from "./contract";
+import { CONTRACT_ADDRESS } from "../env";
 
 const Root = styled.div`
   width: 100vw;
@@ -60,9 +61,7 @@ export const Main = () => {
   // TODO: Make this more dynamic
   // Currently you have to deploy the contract, get its address and hardcode items
   // as parameter when calling the useEth hook
-  const { eth, accounts, contract } = useEth(
-    "0x07585E99bBDB4C7f68CA276F8c124EF07686A37c"
-  );
+  const { eth, accounts, contract } = useEth(CONTRACT_ADDRESS);
   return (
     <Root>
       <Container>
