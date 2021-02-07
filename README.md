@@ -1,7 +1,7 @@
 ## What
-Playground to experiment with truffle
+Playground to experiment with Web3 and contract interaction on Ethereum.
 
-Currently only works in local dev environment, to run it:
+Currently only set up for local environment, to run it:
 
 1. `yarn install`
 2. `yarn dev`
