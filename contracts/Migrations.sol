@@ -1,11 +1,10 @@
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.6.0;
 
 contract Migrations {
-  address public owner = msg.sender;
-  uint public last_completed_migration;
+  address public owner;
 
-  uint storedData;
+  // A function with the signature `last_completed_migration()`, returning a uint, is required.
+  uint public last_completed_migration;
 
   modifier restricted() {
     require(
@@ -15,15 +14,17 @@ contract Migrations {
     _;
   }  
 
-  function setCompleted(uint completed) public restricted {
+  constructor() public {
+    owner = msg.sender;
+  }
+
+  // A function with the signature `setCompleted(uint)` is required.
+  function setCompleted(uint completed) public {
     last_completed_migration = completed;
   }
 
-  function setValue(uint x) public {
-    storedData = x;
-  }
-
-  function getValue() public view returns (uint) {
-    return storedData;
+  function upgrade(address new_address) public {
+    Migrations upgraded = Migrations(new_address);
+    upgraded.setCompleted(last_completed_migration);
   }
 }
