@@ -1,6 +1,6 @@
 import { AbiItem } from "web3-utils";
 // This defines methods and properties for Web3 to interact with
-export const contractJsonInterface: AbiItem[] = [
+export const gettersetterInterface: AbiItem[] = [
   {
     constant: true,
     inputs: [],

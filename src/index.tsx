@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import styled from "styled-components";
 import Web3 from "web3";
 
-import { contractJsonInterface } from "./contract";
+import { gettersetterInterface } from "./contracts";
 import { CONTRACT_ADDRESS } from "../env";
 
 const Root = styled.div`
@@ -48,7 +48,7 @@ const useEth = (contractAddress: string) => {
   // Also set reference to contract so we can interact with it
   React.useEffect(() => {
     eth.requestAccounts().then(setAccounts);
-    const myContract = new eth.Contract(contractJsonInterface, contractAddress);
+    const myContract = new eth.Contract(gettersetterInterface, contractAddress);
     setContract(myContract);
   }, [eth]);
 
