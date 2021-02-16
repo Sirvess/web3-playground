@@ -25,9 +25,6 @@ const Button = styled.button`
 `;
 
 export const Main = () => {
-  // TODO: Make this more dynamic
-  // Currently you have to deploy the contract, get its address and hardcode items
-  // as parameter when calling the useEth hook
   const { contract } = useGetterSetterContract(CONTRACT_ADDRESS);
   const { accounts } = useWeb3Account();
   return (
